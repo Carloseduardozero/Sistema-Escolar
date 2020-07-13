@@ -1,6 +1,6 @@
 <?php
 
-(stream_resolve_include_path("Cadastro"));
+(stream_resolve_include_path("Cadastro.php"));
 (stream_resolve_include_path("Conexao.php"));
 
 class CadastroModelDao {
