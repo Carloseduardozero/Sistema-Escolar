@@ -1,7 +1,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../estilo/estilo_indexdasd.css">
+        <link rel="stylesheet" href="../estilo/estilo_index.css">
         <meta http-equiv=�Content-Type� content=�text/html; charset=utf-8?>
         <title>Cadastro de notas dos alunos</title>
     </head>
@@ -15,13 +15,13 @@
       <input placeholder="Insira seu nome" name="nome" type="text" tabindex="1" required>
     </fieldset> 
     <fieldset>
-      <input placeholder="Insira sua serie"  name="serie" type="number" tabindex="2" required>
+      <input placeholder="Insira sua serie"  name="serie" type="number" tabindex="2" max="9" min="1" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Insira sua nota"  name="nota" type="number" tabindex="3" required>
+      <input placeholder="Insira sua nota"  name="nota" type="number" tabindex="3" max="10"  min="1" required>
     </fieldset>
     <fieldset>
-      <input placeholder="Insira sua unidade"  name="unidade" type="number" tabindex="4" required>
+      <input placeholder="Insira sua unidade"  name="unidade" type="number" tabindex="4" max="4"  min="1" required>
     </fieldset>
     <fieldset>
     <select type="text" name="materia" placeholder=" Escolha a Matéria"  tabindex="5" required><br><br>
@@ -62,7 +62,7 @@
                   
                 $con = new Conexao();
                 
-                $Pesquisa = filter_input(INPUT_POST,'Pesquisa');
+                $Pesquisa = filter_input(INPUT_POST,'pesquisa');
                 
                 $query = $con->conectar()->prepare("select * from notas where nome = :nome");
                 
