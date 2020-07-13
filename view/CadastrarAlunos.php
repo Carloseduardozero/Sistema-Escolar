@@ -1,8 +1,7 @@
-
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="../estilo/estilo_index.css">
+        <link rel="stylesheet" href="../estilo/estilo_indexdasd.css">
         <meta http-equiv=�Content-Type� content=�text/html; charset=utf-8?>
         <title>Cadastro de notas dos alunos</title>
     </head>
@@ -13,7 +12,7 @@
     
     
     <fieldset>
-      <input placeholder="Insira seu nome" name="nome" type="password" tabindex="1" required>
+      <input placeholder="Insira seu nome" name="nome" type="text" tabindex="1" required>
     </fieldset> 
     <fieldset>
       <input placeholder="Insira sua serie"  name="serie" type="number" tabindex="2" required>
@@ -25,7 +24,7 @@
       <input placeholder="Insira sua unidade"  name="unidade" type="number" tabindex="4" required>
     </fieldset>
     <fieldset>
-    <select type="text" name="materia" placeholder=" Escolha a Matéria"  tabindex="4" required><br><br>
+    <select type="text" name="materia" placeholder=" Escolha a Matéria"  tabindex="5" required><br><br>
                         <option value=" " >Escolha uma das matérias</option>
                         <option>Matemática</option>
                         <option>Portugues</option>
@@ -45,17 +44,47 @@
     <a href="../index.php">Voltar</a>
     </fieldset>
   </form>
+    </div>
   <div class="container">  
-  <form id="contact" action="../controller/controllerBuscarAluno.php" method="post">
-    
+  <form id="contact" action="./CadastrarAlunos.php" method="post">
     <fieldset>
-      <button value="cadastrar" type="submit" id="contact-submit">Cadastrar</button>
+  <input type="text" name="pesquisa" placeholder="Pesquise o aluno"  tabindex="6"  maxlenght="14">
+    </fieldset>
+    <fieldset>
+      <button value="buscar" type="submit" id="contact-submit">Buscar</button>
     </fieldset>
    
-  </form>
- 
+    <form id="contact">
+    <div class="container">  
+    <?php
+    
+                require_once '../model/modelDao/Conexao.php';
+                  
+                $con = new Conexao();
+                
+                $Pesquisa = filter_input(INPUT_POST,'Pesquisa');
+                
+                $query = $con->conectar()->prepare("select * from notas where nome = :nome");
+                
+                $query->bindValue(":nome" , $Pesquisa);
+                
+                 $query->execute();  
 
-  
-</div>
+
+                 $result = $query->fetchAll();//convertendo querry em strinfg
+
+                 foreach ($result as $value ){
+                     echo "Nota: ".$value['nota']."<br><br>";
+                     echo "Nome: ".$value['nome']."<br><br>";
+                     echo "Unidade: ".$value['unidade']."<br><br>";
+                     echo "Matéria: ".$value['materia']."<br><br>";
+                     echo "Série: ".$value['serie']."<br><br>";
+                    
+                     
+                 }
+            
+            ?>
+    </div>
+    </form>
     </body>
     </html>
