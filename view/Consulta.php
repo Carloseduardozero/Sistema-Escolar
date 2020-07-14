@@ -1,3 +1,10 @@
+<?php
+
+// chamando a classes
+require_once '../model/modelDao/BuscarAlunoDao.php';
+require_once '../model/modelDao/Conexao.php';
+require_once '../model/modelBean/Buscar.php';
+?>
 <html lang="pt-br">
     <head>
         <meta charset="UTF-8">
@@ -8,7 +15,7 @@
    <body>
     <div class="container">  
   
-  <form id="contact" action="./CadastrarAlunos.php" method="post">
+  <form id="contact" action="../controller/controllerBuscarAluno.php" method="post">
     <fieldset>
   <input type="text" name="pesquisa" placeholder="Pesquise o aluno"  tabindex="6"  maxlenght="14">
     </fieldset>
@@ -18,36 +25,30 @@
    
     <form id="contact">
     <div class="container">  
-    <?php
     
-                require_once '../model/modelDao/Conexao.php';
-                  
-                $con = new Conexao();
-                
-                $Pesquisa = filter_input(INPUT_POST,'pesquisa');
-                
-                $query = $con->conectar()->prepare("select * from notas where nome = :nome");
-                
-                $query->bindValue(":nome" , $Pesquisa);
-                
-                 $query->execute();  
-
-
-                 $result = $query->fetchAll();//convertendo querry em strinfg
-
-                 foreach ($result as $value ){
-                     echo "Nota: ".$value['nota']."<br><br>";
-                     echo "Nome: ".$value['nome']."<br><br>";
-                     echo "Unidade: ".$value['unidade']."<br><br>";
-                     echo "Matéria: ".$value['materia']."<br><br>";
-                     echo "Série: ".$value['serie']."<br><br>";
-                    
-                     
-                 }
-            
-            ?>
              <fieldset>
-    <a href="./inicial.php">Voltar</a>
+    <a href="./inicial.php">Voltar</a></br></br>
+ <div><p>
+ 
+   <?php
+   /*
+    //Pegando as informa��es do input do usuario
+
+$pesquisa = filter_input(INPUT_POST,'pesquisa');
+
+//criando um objeto dessa classe
+$con = new Conexao();
+$sql = new BuscarAlunoDao();
+$obj = new Buscar();
+
+//Setando as informa��es para a classe
+$obj->setPesquisa ($pesquisa);
+
+$sql->buscar($con,$obj);
+             
+    */ ?>
+     </p>
+     </div>
     </fieldset>
     </div>
     </form>

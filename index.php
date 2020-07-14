@@ -24,7 +24,7 @@
       <button value="Acessar" type="submit" id="contact-submit" >Acessar</button>
     </fieldset>
     <fieldset>
-    <a href="./view/Cadastrar.php">Ja e cadastrado?<strong>Cadastre-se!</strong></a>
+   
     </fieldset>
   </form>
  

@@ -30,3 +30,5 @@ $obj->setNome($nome);
 
 
 $sql-> insert ($con,$obj);
+
+header("location: ../View/Unidade1.php");
