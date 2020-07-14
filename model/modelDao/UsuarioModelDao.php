@@ -35,7 +35,7 @@ class UsuarioModelDao {
                 
          
 
-             header("location: /Sistema-Escolar/view/CadastrarAlunos.php");
+             header("location: /Sistema-Escolar/view/inicial.php");
              
             }
         } else {
