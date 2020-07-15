@@ -14,8 +14,10 @@ class Unidade1_Dao{
 }
 public function insert($con,$obj) {
 
-$query = $con->conectar()->prepare("select id_primeira from unidade1 where nome = :e");
+$query = $con->conectar()->prepare("select id_primeira from unidade1 where nome = :e and materia = :m");
 $query->bindValue(":e" ,$obj->getNome());
+$query->bindValue(":m" ,$obj->getMateria());
+
  $query->execute();
  if($query->rowCount() > 0){
    

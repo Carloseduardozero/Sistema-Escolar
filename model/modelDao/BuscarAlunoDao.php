@@ -29,9 +29,9 @@ foreach ($result as $value ){
   echo "Matéria: ".$value['materia']."<br><br>";
   echo "Série: ".$value['serie']."<br><br>";
  if($value["nota"]>=6){
-   echo "O aluno foi Aprovado na unidade 1";
+   echo "O aluno foi Aprovado na unidade 1 <br><br>";
  }else{
-echo"Aluno foi Reprovado na unidade 1";
+echo"Aluno foi Reprovado na unidade 1 <br><br>";
 
  }
 }
@@ -54,9 +54,9 @@ foreach ($result as $value ){
   echo "Matéria: ".$value['materia']."<br><br>";
   echo "Série: ".$value['serie']."<br><br>";
   if($value["nota"]>=6){
-    echo "O aluno foi Aprovado na unidade 2";
+    echo "O aluno foi Aprovado na unidade 2 <br><br>";
   }else{
- echo"Aluno foi Reprovado na unidade 2";
+ echo"Aluno foi Reprovado na unidade 2 <br><br>";
  
   }
  }
@@ -79,9 +79,9 @@ echo "Nota: ".$value['nota']."<br><br>";
 echo "Matéria: ".$value['materia']."<br><br>";
 echo "Série: ".$value['serie']."<br><br>";
 if($value["nota"]>=6){
-echo "O aluno foi Aprovado na unidade 3";
+echo "O aluno foi Aprovado na unidade 3 <br><br>";
 }else{
-echo"Aluno foi Reprovado na unidade 3";
+echo"Aluno foi Reprovado na unidade 3 <br><br>";
 
 }
 }
@@ -104,9 +104,9 @@ echo "Nota: ".$value['nota']."<br><br>";
 echo "Matéria: ".$value['materia']."<br><br>";
 echo "Série: ".$value['serie']."<br><br>";
 if($value["nota"]>=6){
-echo "O aluno foi Aprovado na unidade 4";
+echo "O aluno foi Aprovado na unidade 4 <br><br>";
 }else{
-echo"Aluno foi Reprovado na unidade 4";
+echo"Aluno foi Reprovado na unidade 4 <br><br>";
 
 }
 }
