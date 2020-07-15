@@ -28,7 +28,12 @@ foreach ($result as $value ){
   echo "Nota: ".$value['nota']."<br><br>";
   echo "Matéria: ".$value['materia']."<br><br>";
   echo "Série: ".$value['serie']."<br><br>";
- 
+ if($value["nota"]>=6){
+   echo "O aluno foi Aprovado na unidade 1";
+ }else{
+echo"Aluno foi Reprovado na unidade 1";
+
+ }
 }
 
      }
@@ -48,36 +53,42 @@ foreach ($result as $value ){
   echo "Nota: ".$value['nota']."<br><br>";
   echo "Matéria: ".$value['materia']."<br><br>";
   echo "Série: ".$value['serie']."<br><br>";
+  if($value["nota"]>=6){
+    echo "O aluno foi Aprovado na unidade 2";
+  }else{
+ echo"Aluno foi Reprovado na unidade 2";
  
+  }
+ }
    
 }
 
-   }
+function buscar3($con,$obj){
 
-   
-   function buscar3($con,$obj){
-
-    $query = $con->conectar()->prepare("select * from unidade3 where nome = :nome");
-            
-            $query->bindValue(":nome" ,$obj->getPesquisa());
-            
-             $query->execute();  
+  $query = $con->conectar()->prepare("select * from unidade3 where nome = :nome");
+          
+          $query->bindValue(":nome" ,$obj->getPesquisa());
+          
+           $query->execute();  
 
 $result = $query->fetchAll();//convertendo querry em strinfg
 
 foreach ($result as $value ){
-  echo "Nome: ".$value['nome']."<br><br>";
-  echo "Nota: ".$value['nota']."<br><br>";
-  echo "Matéria: ".$value['materia']."<br><br>";
-  echo "Série: ".$value['serie']."<br><br>";
- 
+echo "Nome: ".$value['nome']."<br><br>";
+echo "Nota: ".$value['nota']."<br><br>";
+echo "Matéria: ".$value['materia']."<br><br>";
+echo "Série: ".$value['serie']."<br><br>";
+if($value["nota"]>=6){
+echo "O aluno foi Aprovado na unidade 3";
+}else{
+echo"Aluno foi Reprovado na unidade 3";
 
- 
+}
 }
 
- }
- 
- function buscar4($con,$obj){
+}
+
+function buscar4($con,$obj){
 
   $query = $con->conectar()->prepare("select * from unidade4 where nome = :nome");
           
@@ -88,16 +99,24 @@ foreach ($result as $value ){
 $result = $query->fetchAll();//convertendo querry em strinfg
 
 foreach ($result as $value ){
-  echo "Nome: ".$value['nome']."<br><br>";
-  echo "Nota: ".$value['nota']."<br><br>";
-  echo "Matéria: ".$value['materia']."<br><br>";
-  echo "Série: ".$value['serie']."<br><br>";
+echo "Nome: ".$value['nome']."<br><br>";
+echo "Nota: ".$value['nota']."<br><br>";
+echo "Matéria: ".$value['materia']."<br><br>";
+echo "Série: ".$value['serie']."<br><br>";
+if($value["nota"]>=6){
+echo "O aluno foi Aprovado na unidade 4";
+}else{
+echo"Aluno foi Reprovado na unidade 4";
+
+}
+}
+
+}
+   }
+
  
 
-}
 
-}
 
-}
 
 

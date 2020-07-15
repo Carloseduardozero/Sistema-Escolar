@@ -31,4 +31,7 @@ $obj->setNome($nome);
 
 $sql-> insert ($con,$obj);
 
+
+echo $nota >= 6 ? "Aprovado" : "Reprovado";
+
 header("location: ../View/Unidade1.php");

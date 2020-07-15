@@ -12,18 +12,20 @@ $obj = new Usuario();
 $con = new Conexao();
 $sql = new UsuarioModelDao();
 
-//Pegando as informações do input do usuario
+//Pegando as informaï¿½ï¿½es do input do usuario
 
 $usuario = filter_input(INPUT_POST,'usuario');
 $senha = filter_input(INPUT_POST,'senha');
 
-//Setando as informações para a classe
+//Setando as informaï¿½ï¿½es para a classe
 
 $obj->setUsuario($usuario);
 
 $obj->setSenha($senha);
 
 $sql->logar($con, $obj);
+
+
 
 
 
